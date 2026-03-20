@@ -1,0 +1,66 @@
+#include <iostream>
+using namespace std;
+
+// inicializar el tablero dinámico
+void inicializarTablero(int ancho, int alto);
+
+// imprimir el tablero en consola
+void imprimirTablero(int ancho, int alto);
+
+// verificar colisiones entre pieza y tablero
+bool verificarColision(int fila, int columna, int pieza);
+
+// mover pieza a la izquierda
+void moverIzquierda(int &columna);
+
+// mover pieza a la derecha
+void moverDerecha(int &columna);
+
+//bajar pieza una fila
+void bajarPieza(int &fila);
+
+//rotar pieza (90 grados)
+void rotarPieza(int &pieza);
+
+// fijar pieza en el tablero
+void fijarPieza(int fila, int columna, int pieza);
+
+// limpiar filas completas
+void limpiarFilas(int ancho, int alto);
+
+// detectar Game Over
+bool detectarGameOver(int ancho, int alto);
+
+int main() {
+    int opcion;
+
+    cout << "==============================" << endl;
+    cout << "        MENU PRINCIPAL        " << endl;
+    cout << "==============================" << endl;
+    cout << "[1] Iniciar nuevo juego" << endl;
+    cout << "[2] Ver instrucciones" << endl;
+    cout << "[3] Salir" << endl;
+    cout << "Seleccione una opcion: ";
+    cin >> opcion;
+
+    switch(opcion) {
+    case 1:
+        cout << "\nIniciando nuevo juego...\n";
+        break;
+    case 2:
+        cout << "\n=== INSTRUCCIONES ===\n";
+        cout << "A -> Izquierda\n";
+        cout << "D -> Derecha\n";
+        cout << "S -> Bajar\n";
+        cout << "W -> Rotar\n";
+        cout << "Q -> Salir\n";
+        break;
+    case 3:
+        cout << "\nSaliendo del programa. ¡Hasta luego!\n";
+        break;
+    default:
+        cout << "\nOpcion invalida.\n";
+    }
+
+    return 0;
+}
